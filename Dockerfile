@@ -1,5 +1,5 @@
 FROM openjdk:8-alpine
-
+RUN echo -e "http://nl.alpinelinux.org/alpine/v3.5/main\nhttp://nl.alpinelinux.org/alpine/v3.5/community" > /etc/apk/repositories
 # Required for starting application up.
 RUN mkdir -p /opt/app
 ENV PROJECT_HOME /opt/app
