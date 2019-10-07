@@ -2,7 +2,9 @@ FROM openjdk:8-alpine
 
 # Required for starting application up.
 RUN rm -rf /var/cache/apk/* && rm -rf /tmp/*
-RUN apk update 
+RUN apk add --no-cache shadow
+RUN chsh -s /bin/bash
+RUN exec /bin/bash 
 
 RUN mkdir -p /opt/app
 ENV PROJECT_HOME /opt/app
